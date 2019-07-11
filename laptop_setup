@@ -90,7 +90,6 @@ EXTENSIONS=(
     esbenp.prettier-vscode
     formulahendry.auto-close-tag
     mrmlnc.vscode-csscomb
-    ms-azuretools.vscode-docker
     ms-vscode.atom-keybindings
     shd101wyy.markdown-preview-enhanced
 )
