@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+#
+# Requirements:
+#
+# - Logged into the app store (for purchased apps)
+#
+# Not all apps can be installed with this script.
+# The following apps needs to be installed manually:
+#
+# - Logitech Options
+#
+# Based on https://gist.github.com/codeinthehole/26b37efa67041e1307db
+
+echo "Starting setup..."
+
+# Check for Homebrew, install if we don't have it
+if test ! $(which brew); then
+    echo "Installing homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Update homebrew recipes
+echo 'Updating brew...'
+brew update
+
+# Install Brew packages
+echo "Installing brew packages..."
+PACKAGES=(
+    git
+    mas
+    mongodb
+    node
+    yarn
+)
+brew install ${PACKAGES[@]}
+brew cleanup
+
+# Install cask apps
+echo "Installing cask apps..."
+CASKS=(
+    # Development
+    visual-studio-code
+    docker
+    postman
+    iterm2
+    robo-3t
+    # Browsers
+    google-chrome
+    firefox
+    # Utilities
+    google-backup-and-sync
+    lastpass
+    # Communication
+    slack
+    # Media
+    cricut-design-space
+    quik
+    spotify
+    # Gaming
+    battle-net
+    league-of-legends
+)
+brew cask install ${CASKS[@]}
+
+# Install Fonts
+echo "Installing fonts..."
+brew tap caskroom/fonts
+FONTS=(
+    font-fira-code
+)
+brew cask install ${FONTS[@]}
+
+# Install App Store apps
+echo 'Installing App Store applications...'
+APPS=(
+    1274495053 # Microsoft To Do
+    441258766 # Magnet
+)
+mas install ${APPS[@]}
+
+# Install VS Code Extensions
+echo 'Installing VS Code extensions...'
+EXTENSIONS=(
+    abusaidm.html-snippets
+    alefragnani.project-manager
+    arcticicestudio.nord-visual-studio-code
+    christian-kohler.npm-intellisense
+    dbaeumer.vscode-eslint
+    dzannotti.vscode-babel-coloring
+    esbenp.prettier-vscode
+    formulahendry.auto-close-tag
+    mrmlnc.vscode-csscomb
+    ms-azuretools.vscode-docker
+    ms-vscode.atom-keybindings
+    shd101wyy.markdown-preview-enhanced
+)
+code --install-extension  ${EXTENSIONS[@]}
+
+# VS Code Settings
+echo 'Copying VS Code settings...'
+cp vscode_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+
+# Configure OSX Settings
+# To Do
+
+# Success Message
+echo "Setup complete!"
