@@ -81,14 +81,10 @@ mas install ${APPS[@]}
 # Install VS Code Extensions
 echo 'Installing VS Code extensions...'
 EXTENSIONS=(
-    abusaidm.html-snippets
     alefragnani.project-manager
     arcticicestudio.nord-visual-studio-code
-    christian-kohler.npm-intellisense
     dbaeumer.vscode-eslint
-    dzannotti.vscode-babel-coloring
     esbenp.prettier-vscode
-    formulahendry.auto-close-tag
     mrmlnc.vscode-csscomb
     ms-vscode.atom-keybindings
     shd101wyy.markdown-preview-enhanced
