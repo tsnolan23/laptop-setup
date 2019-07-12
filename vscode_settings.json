@@ -11,8 +11,11 @@
   "explorer.confirmDelete": false,
   "csscomb.formatOnSave": true,
   "explorer.confirmDragAndDrop": false,
-  "[yaml]": false,
   "files.eol": "\n",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true
 }
