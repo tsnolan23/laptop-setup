@@ -2,70 +2,51 @@
 
 This script performs a series of configuration and installations to set up a new computer or restore/repair an existing one with my personal preferences.
 
-## Usage
+---
+
+### Usage
 
 ```
 sh laptop_setup
 ```
 
-## What tasks are performed?
+---
 
-- Install Brew if it doesn't exist
-- Update Brew
-- Install Brew packages
-- Install Brew Caskes
-- Install Fonts
-- Install App Store apps
-- Install VS Code Extensions
-- Apply VS Code Settings
+### What tasks are performed?
 
-## What is installed?
+##### :package: **Install Brew Packages**
 
-#### :package: Brew Packages :package:
+##### :beer: **Install Brew Casks**
 
-- `git`
-- `mas`
-- `mongodb`
-- `node`
-- `yarn`
+##### :pencil: **Install Fonts**
 
-#### :beer: Brew Casks :beer:
+##### :apple: **Install App Store apps**
 
-- Visual Studio Code
-- Docker
-- Postman
-- iTerm2
-- Robo 3T
-- Google Chrome
-- Firefox
-- Google Backup and Sync
-- LastPass
-- Slack
-- Cricut Design Space
-- GoPro Quik
-- Spotify
-- Battle.net Client
-- League of Legends Client
+##### :pushpin: **Install VS Code Extensions**
 
-#### :pencil: Fonts :pencil:
+##### :wrench: **Apply VS Code Settings**
 
-- Fira Code
+---
 
-#### :iphone: App Store Apps :iphone:
+## Customizing
 
-- Magnet
-- Microsoft To Do
+For all of the steps performed above, exlcuding applying VS Code settings, an array of items are looped over and installed with a single command.
 
-#### :wrench: VS Code Extensions :wrench:
+Simply modify the array for any of the tasks to adjust what is installed.
 
-- HTML Snippets
-- Project Manager
-- Nord Theme
-- NPM Intellisense
-- ESLint
-- Babel Coloring
-- Prettier
-- Auto Close Tag
-- CSSComb
-- Atom Key Bindings
-- Markdown Preview Enhanced
+The following chart breaks down what identifiers are used:
+
+| Task               | Array        | Identifier                                                                    |
+| ------------------ | ------------ | ----------------------------------------------------------------------------- |
+| Brew Packages      | `PACKAGES`   | Package names listed in the official Brew [packages]                          |
+| Brew Casks         | `CASKS`      | Cask names listed in the official Brew [casks]                                |
+| Fonts              | `FONTS`      | Files listed in the [font cask] without the `.rb` extension                   |
+| App Store          | `APPS`       | App store [identifiers] for apps (can find installed ids with `mas list`)     |
+| VS Code Extensions | `EXTENSIONS` | Extension `<author>.<name>` (can find installed with `code --list-extensions) |
+
+[packages]: https://formulae.brew.sh/formula/
+[casks]: https://formulae.brew.sh/cask/
+[font cask]: https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
+[identifiers]: https://github.com/mas-cli/mas#-usage
+
+The VS Code settings can be customized by modifying the `vscode_settings.json` file. That file is simply copied over as part of the setup!
