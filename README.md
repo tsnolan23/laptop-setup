@@ -20,7 +20,7 @@ sh laptop_setup
 
 ##### :pencil: **Install Fonts**
 
-##### :apple: **Install App Store apps**
+##### :apple: **Install App Store Apps**
 
 ##### :pushpin: **Install VS Code Extensions**
 
@@ -28,7 +28,7 @@ sh laptop_setup
 
 ---
 
-## Customizing
+### Customizing
 
 For all of the steps performed above, exlcuding applying VS Code settings, an array of items are looped over and installed with a single command.
 
