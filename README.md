@@ -14,17 +14,17 @@ sh laptop_setup
 
 ### What tasks are performed?
 
-##### :package: **Install Brew Packages**
+- :package: Install Brew Packages
 
-##### :beer: **Install Brew Casks**
+- :beer: Install Brew Casks
 
-##### :pencil: **Install Fonts**
+- :pencil: Install Fonts
 
-##### :apple: **Install App Store Apps**
+- :apple: Install App Store Apps
 
-##### :pushpin: **Install VS Code Extensions**
+- :pushpin: Install VS Code Extensions
 
-##### :wrench: **Apply VS Code Settings**
+- :wrench: Apply VS Code Settings
 
 ---
 
