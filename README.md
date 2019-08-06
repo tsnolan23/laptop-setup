@@ -15,22 +15,18 @@ sh laptop_setup
 ### What tasks are performed?
 
 - :package: Install Brew Packages
-
 - :beer: Install Brew Casks
-
 - :pencil: Install Fonts
-
 - :apple: Install App Store Apps
-
 - :pushpin: Install VS Code Extensions
-
 - :wrench: Apply VS Code Settings
+- :construction: Apply bash aliases
 
 ---
 
 ### Customizing
 
-For all of the steps performed above, exlcuding applying VS Code settings, an array of items are looped over and installed with a single command.
+For all of the steps performed above, exlcuding applying VS Code settings and bash aliases, an array of items are looped over and installed with a single command.
 
 Simply modify the array for any of the tasks to adjust what is installed.
 
@@ -49,4 +45,4 @@ The following chart breaks down what identifiers are used:
 [font cask]: https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
 [identifiers]: https://github.com/mas-cli/mas#-usage
 
-The VS Code settings can be customized by modifying the `vscode_settings.json` file. That file is simply copied over as part of the setup!
+The VS Code settings and bash aliases can be customized by modifying the `vscode_settings.json` and `.bash_profile` files respectively. That file is simply copied over as part of the setup!
