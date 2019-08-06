@@ -90,6 +90,7 @@ EXTENSIONS=(
     ms-vscode.atom-keybindings
     ms-vscode.vscode-typescript-tslint-plugin
     shd101wyy.markdown-preview-enhanced
+    shinnn.stylelint
     streetsidesoftware.code-spell-checker
     wix.glean
 )
