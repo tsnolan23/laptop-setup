@@ -60,7 +60,7 @@ echo 'Copying VS Code settings...'
 cp vscode_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 
 # Bash Aliases
-less .bash_profile >> ~/.bash_profile
+less .zshrc >> ~/.zshrc
 
 # Success Message
 echo "Setup complete!"

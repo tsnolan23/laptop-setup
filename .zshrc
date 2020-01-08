@@ -1,6 +1,6 @@
 
 # Misc Aliases
-alias helpme="cat ~/.bash_profile"
+alias helpme="cat ~/.zshrc"
 
 # Git Aliases
 alias gs="git status"
