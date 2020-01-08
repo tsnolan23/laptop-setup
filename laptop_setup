@@ -50,14 +50,8 @@ EXTENSIONS=(
     dbaeumer.vscode-eslint
     eamodio.gitlens
     esbenp.prettier-vscode
-    formulahendry.auto-rename-tag
-    mrmlnc.vscode-csscomb
     ms-vscode.atom-keybindings
-    ms-vscode.vscode-typescript-tslint-plugin
-    shd101wyy.markdown-preview-enhanced
-    shinnn.stylelint
     streetsidesoftware.code-spell-checker
-    wix.glean
 )
 code --install-extension  ${EXTENSIONS[@]}
 
