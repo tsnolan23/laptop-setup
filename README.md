@@ -17,7 +17,6 @@ sh laptop_setup
 - :package: Install Brew Packages
 - :beer: Install Brew Casks
 - :pencil: Install Fonts
-- :apple: Install App Store Apps
 - :pushpin: Install VS Code Extensions
 - :wrench: Apply VS Code Settings
 - :construction: Apply bash aliases
@@ -37,12 +36,10 @@ The following chart breaks down what identifiers are used:
 | Brew Packages      | `PACKAGES`   | Package names listed in the official Brew [packages]                          |
 | Brew Casks         | `CASKS`      | Cask names listed in the official Brew [casks]                                |
 | Fonts              | `FONTS`      | Files listed in the [font cask] without the `.rb` extension                   |
-| App Store          | `APPS`       | App store [identifiers] for apps (can find installed ids with `mas list`)     |
 | VS Code Extensions | `EXTENSIONS` | Extension `<author>.<name>` (can find installed with `code --list-extensions) |
 
 [packages]: https://formulae.brew.sh/formula/
 [casks]: https://formulae.brew.sh/cask/
 [font cask]: https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
-[identifiers]: https://github.com/mas-cli/mas#-usage
 
 The VS Code settings and bash aliases can be customized by modifying the `vscode_settings.json` and `.bash_profile` files respectively. That file is simply copied over as part of the setup!
