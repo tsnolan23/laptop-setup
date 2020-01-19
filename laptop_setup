@@ -19,6 +19,8 @@ PACKAGES=(
     git
     node
     yarn
+    thefuck
+    z
 )
 brew install ${PACKAGES[@]}
 brew cleanup
@@ -28,12 +30,16 @@ echo "Installing cask apps..."
 CASKS=(
     # Development
     visual-studio-code
+    iterm2
     # Browsers
     google-chrome
     # Gaming
     league-of-legends
 )
 brew cask install ${CASKS[@]}
+
+# Oh my zsh install
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Fonts
 echo "Installing fonts..."
