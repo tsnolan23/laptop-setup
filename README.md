@@ -43,3 +43,11 @@ The following chart breaks down what identifiers are used:
 [font cask]: https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
 
 The VS Code settings and zsh aliases can be customized by modifying the `vscode_settings.json` and `.zshrc` files respectively. That file is simply copied over as part of the setup!
+
+---
+
+### To do
+
+1. Improve copying zshrc as a file - it is currently all or nothing with the grep
+1. Apply zsh color profile in the script
+1. Install app store applications
