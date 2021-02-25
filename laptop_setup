@@ -1,72 +1,177 @@
 #!/usr/bin/env bash
 # Based on https://gist.github.com/codeinthehole/26b37efa67041e1307db
 
-echo "Starting setup..."
-
 # Check for Homebrew, install if we don't have it
-if test ! $(which brew); then
-    echo "Installing homebrew..."
+echo "Installing Homebrew..."
+if test ! $(which brew)
+then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    echo "Homebrew is already installed. Skipping."
 fi
 
-# Update homebrew recipes
+echo ""
+
+# # Update homebrew
 echo 'Updating brew...'
 brew update
+
+echo ""
 
 # Install Brew packages
 echo "Installing brew packages..."
 PACKAGES=(
     git
-    node
+    nvm
     yarn
-    thefuck
     z
 )
-brew install ${PACKAGES[@]}
-brew cleanup
+for PACKAGE in "${PACKAGES[@]}"
+do
+    if brew list $PACKAGE > /dev/null
+    then
+        echo "$PACKAGE is already installed. Skipping."
+    else
+        echo "Installing $PACKAGE..."
+        brew install $PACKAGE > /dev/null 2>&1
+        echo "Done."
+    fi
+done
 
-# Install cask apps
+echo ""
+
+# Install Cask apps
 echo "Installing cask apps..."
 CASKS=(
     # Development
     visual-studio-code
     iterm2
+    robo-3t
+    postman
+
+    # Media
+    spotify
+
+    # Productivity
+    slack
+    dash
+
     # Browsers
-    google-chrome
+    brave-browser
+
     # Gaming
     league-of-legends
+    steam
 )
-brew cask install ${CASKS[@]}
+for CASK in "${CASKS[@]}"
+do
+    if brew list --cask $CASK &>/dev/null
+    then
+        echo "$CASK is already installed. Skipping."
+    else
+        echo "Installing $CASK..."
+        brew install --cask $CASK > /dev/null 2>&1
+        echo "Done."
+    fi
+done
 
-# Oh my zsh install
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo ""
 
 # Install Fonts
 echo "Installing fonts..."
-brew tap caskroom/fonts
-FONTS=(
-    font-fira-code
-)
-brew cask install ${FONTS[@]}
+if brew list --cask font-fira-code &>/dev/null
+then
+    echo "font-fira-code is already installed. Skipping."
+else
+    echo "Tapping caskroom/fonts..."
+    brew tap caskroom/fonts &>/dev/null
+    echo "Installing font-fira-code..."
+    brew install --cask font-fira-code &>/dev/null
+    echo "Done."
+fi
+
+echo ""
+
+# Clean up
+echo "Cleaning up brew..." 
+brew cleanup &>/dev/null
+echo "Done."
+
+echo ""
+
+# Oh my zsh install
+echo "Installing zsh..."
+if test ! $(which zsh)
+then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    echo "Done."
+else
+    echo "zsh is already installed. Skipping."
+fi
+
+echo ""
 
 # Install VS Code Extensions
 echo 'Installing VS Code extensions...'
 EXTENSIONS=(
+    alefragnani.project-manager
+    arcticicestudio.nord-visual-studio-code
+    bradlc.vscode-tailwindcss
     christian-kohler.npm-intellisense
     dbaeumer.vscode-eslint
     eamodio.gitlens
     esbenp.prettier-vscode
+    mrmlnc.vscode-csscomb
     ms-vscode.atom-keybindings
+    ms-vscode.vscode-typescript-next
+    ms-vscode.vscode-typescript-tslint-plugin
     streetsidesoftware.code-spell-checker
+    wix.vscode-import-cost
 )
-code --install-extension  ${EXTENSIONS[@]}
+for EXTENSION in "${EXTENSIONS[@]}"
+do
+    if code --list-extensions | grep $EXTENSION &> /dev/null
+    then
+        echo "$EXTENSION is already installed. Skipping."
+    else
+        echo "Installing $EXTENSION..."
+        code --install-extension $EXTENSION &>/dev/null
+        echo "Done."
+    fi
+done
+
+echo ""
 
 # VS Code Settings
 echo 'Copying VS Code settings...'
-cp vscode_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+if [ ! -f $HOME/Library/Application\ Support/Code/User/settings.json ]
+then
+    cp vscode_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+    echo "Done."
+else
+    echo 'Settings already copied. Skipping.'
+fi
+
+echo ""
 
 # Bash Aliases
-less .zshrc >> ~/.zshrc
+echo "Adding bash aliases and configuration..."
+if less ~/.zshrc | grep 'alias gco="git checkout"' &> /dev/null
+then
+    echo "Aliases and configuration already added. Skipping."
+else
+    less .zshrc >> ~/.zshrc
+    echo "Done."
+fi
+
+echo ""
+
+# Git configuration
+echo "Configuring git..."
+git config --global pager.branch false
+echo "Done."
+
+echo ""
 
 # Success Message
 echo "Setup complete!"

@@ -1,5 +1,4 @@
 {
-  "workbench.colorTheme": "Nord",
   "workbench.startupEditor": "newUntitledFile",
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -17,5 +16,15 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "workbench.colorTheme": "Nord",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.codeActionsOnSave": null,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
