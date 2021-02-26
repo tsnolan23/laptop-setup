@@ -55,6 +55,7 @@ CASKS=(
     # Productivity
     slack
     dash
+    google-backup-and-sync
 
     # Browsers
     brave-browser
