@@ -48,6 +48,7 @@ CASKS=(
     iterm2
     robo-3t
     postman
+    figma
 
     # Media
     spotify
@@ -128,6 +129,7 @@ EXTENSIONS=(
     ms-vscode.vscode-typescript-tslint-plugin
     streetsidesoftware.code-spell-checker
     wix.vscode-import-cost
+    Janne252.fontawesome-autocomplete
 )
 for EXTENSION in "${EXTENSIONS[@]}"
 do
@@ -172,6 +174,7 @@ echo "Configuring git..."
 git config --global pager.branch false
 git config --global user.name "Tom Nolan"
 git config --global user.email "tsnolan@outlook.com"
+git config --global pull.ff only
 echo "Done."
 
 echo ""

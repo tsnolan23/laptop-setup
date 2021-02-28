@@ -15,4 +15,12 @@ alias gd="git diff"
 alias gamend="git commit --amend --no-edit"
 
 # Fix GPG
-# export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
+
+# Z history support
+. /usr/local/etc/profile.d/z.sh
+
+# nvm support
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
