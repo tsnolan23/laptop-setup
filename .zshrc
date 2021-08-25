@@ -14,6 +14,7 @@ alias gb="git branch"
 alias gd="git diff"
 alias gamend="git commit --amend --no-edit"
 alias gnamestash="git stash push -m"
+alias gpick="git cherry-pick -x"
 
 # Fix GPG
 export GPG_TTY=$(tty)
