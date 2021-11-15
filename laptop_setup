@@ -25,6 +25,7 @@ PACKAGES=(
     nvm
     yarn
     z
+    gpg
 )
 for PACKAGE in "${PACKAGES[@]}"
 do
