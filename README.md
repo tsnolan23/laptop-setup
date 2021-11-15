@@ -46,6 +46,10 @@ The VS Code settings and zsh aliases can be customized by modifying the `vscode_
 
 ---
 
+### Additional manual tasks
+
+- [Generate a new GPG key for GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+
 ### To do
 
 1. Improve copying zshrc as a file - it is currently all or nothing with the grep
