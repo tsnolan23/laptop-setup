@@ -59,7 +59,7 @@ CASKS=(
     google-backup-and-sync
 
     # Browsers
-    brave-browser
+    google-chrome
 
     # Gaming
     league-of-legends
