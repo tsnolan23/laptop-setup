@@ -1,35 +1,23 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "atomKeymap.promptV3Features": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "window.zoomLevel": 0,
+  // Appearance
+  "workbench.colorTheme": "Nord",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "explorer.openEditors.visible": 0,
+  "breadcrumbs.enabled": false,
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 16,
-  "editor.renderWhitespace": "boundary",
   "editor.fontLigatures": true,
-  "explorer.confirmDelete": false,
-  "csscomb.formatOnSave": true,
-  "explorer.confirmDragAndDrop": false,
-  "files.eol": "\n",
+  "editor.fontSize": 16,
+  "emmet.triggerExpansionOnTab": true,
+  // Formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+  "[html]": {
+    "editor.formatOnSave": false // Disable html formatting for Django templates...
   },
-  "emmet.triggerExpansionOnTab": true,
-  "workbench.colorTheme": "Nord",
-  "typescript.updateImportsOnFileMove.enabled": "never",
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "editor.codeActionsOnSave": null,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "fontAwesomeAutocomplete.version": "4",
-  "fontAwesomeAutocomplete.patterns": [
-    "**/*.html",
-    "**/*.tsx"
-  ]
+  // Other
+  "workbench.settings.editor": "json",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false
 }
