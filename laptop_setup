@@ -86,7 +86,7 @@ then
     echo "font-fira-code is already installed. Skipping."
 else
     echo "Tapping caskroom/fonts..."
-    brew tap caskroom/fonts &>/dev/null
+    brew tap homebrew/cask-fonts &>/dev/null
     echo "Installing font-fira-code..."
     brew install --cask font-fira-code &>/dev/null
     echo "Done."
