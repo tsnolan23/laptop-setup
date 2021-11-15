@@ -158,6 +158,7 @@ then
     echo "Aliases and configuration already added. Skipping."
 else
     less .zshrc >> ~/.zshrc
+    sed -i '' 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/g' ~/.zshrc
     echo "Done."
 fi
 
