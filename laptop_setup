@@ -123,13 +123,7 @@ EXTENSIONS=(
     dbaeumer.vscode-eslint
     eamodio.gitlens
     esbenp.prettier-vscode
-    mrmlnc.vscode-csscomb
-    ms-vscode.atom-keybindings
-    ms-vscode.vscode-typescript-next
-    ms-vscode.vscode-typescript-tslint-plugin
     streetsidesoftware.code-spell-checker
-    wix.vscode-import-cost
-    Janne252.fontawesome-autocomplete
 )
 for EXTENSION in "${EXTENSIONS[@]}"
 do
