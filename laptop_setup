@@ -103,6 +103,7 @@ echo "Done."
 echo ""
 
 # Oh my zsh install
+# Font download https://github.com/powerline/fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf?raw=true
 echo "Installing zsh..."
 if test ! $(which zsh)
 then
