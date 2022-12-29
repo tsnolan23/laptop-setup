@@ -188,3 +188,9 @@ echo ""
 
 # Success Message
 echo "Setup complete!"
+
+# GPG Generate new key
+# gpg --default-new-key-algo rsa4096 --gen-key
+# gpg --list-secret-keys --keyid-format=long
+# gpg --armor --export <id>
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account
