@@ -170,8 +170,7 @@ if less ~/.zshrc | grep 'alias gco="git checkout"' &> /dev/null
 then
     echo " skipping."
 else
-    less .zshrc >> ~/.zshrc
-    sed -i '' 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/g' ~/.zshrc
+    cp .zshrc ~/.zshrc
     echo " done."
 fi
 

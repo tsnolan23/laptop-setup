@@ -52,7 +52,6 @@ The VS Code settings and zsh aliases can be customized by modifying the `vscode_
 
 ### To do
 
-1. Improve copying zshrc as a file - it is currently all or nothing with the grep
 1. Apply zsh color profile in the script
 1. Install [Inconsolata](https://levien.com/type/myfonts/inconsolata.html) font
 1. Install app store applications
