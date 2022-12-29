@@ -7,7 +7,7 @@ if test ! $(xcode-select -p)
 then
     xcode-select --install
 else
-    echo "XCode is already installed. Skipping."
+    echo "XCode is already installed... skipping."
 fi
 
 echo ""
@@ -18,7 +18,7 @@ if test ! $(which brew)
 then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-    echo "Homebrew is already installed. Skipping."
+    echo "Homebrew is already installed... skipping."
 fi
 
 echo ""
@@ -42,11 +42,11 @@ for PACKAGE in "${PACKAGES[@]}"
 do
     if brew list $PACKAGE &>/dev/null
     then
-        echo "$PACKAGE is already installed. Skipping."
+        echo "$PACKAGE is already installed... skipping."
     else
-        echo "Installing $PACKAGE..."
+        echo "Installing $PACKAGE...\c"
         brew install $PACKAGE > /dev/null 2>&1
-        echo "Done."
+        echo " done."
     fi
 done
 
@@ -67,20 +67,20 @@ CASKS=(
     slack
 
     # Media
-    # spotify
+    spotify
 
     # Browsers
     google-chrome
 )
 for CASK in "${CASKS[@]}"
 do
+    echo "Installing $CASK...\c"
     if brew list --cask $CASK &>/dev/null
     then
-        echo "$CASK is already installed. Skipping."
+        echo " skipping."
     else
-        echo "Installing $CASK..."
         brew install --cask $CASK > /dev/null 2>&1
-        echo "Done."
+        echo " done."
     fi
 done
 
@@ -90,33 +90,34 @@ echo ""
 echo "Installing fonts..."
 if brew list --cask font-fira-code &>/dev/null
 then
-    echo "font-fira-code is already installed. Skipping."
+    echo "Fonts are already installed... skipping."
 else
-    echo "Tapping caskroom/fonts..."
+    echo "Tapping caskroom/fonts...\c"
     brew tap homebrew/cask-fonts &>/dev/null
-    echo "Installing font-fira-code..."
+    echo " done."
+    echo "Installing font-fira-code...\c"
     brew install --cask font-fira-code &>/dev/null
-    echo "Done."
+    echo " done."
 fi
 
 echo ""
 
 # Clean up
-echo "Cleaning up brew..." 
+echo "Cleaning up brew...\c" 
 brew cleanup &>/dev/null
-echo "Done."
+echo " done."
 
 echo ""
 
 # Oh my zsh install
 # Font download https://github.com/powerline/fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf?raw=true
-echo "Installing zsh..."
+echo "Installing zsh...\c"
 if test ! $(which zsh)
 then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    echo "Done."
+    echo " done."
 else
-    echo "zsh is already installed. Skipping."
+    echo " skipping."
 fi
 
 echo ""
@@ -141,49 +142,49 @@ for EXTENSION in "${EXTENSIONS[@]}"
 do
     if code --list-extensions | grep $EXTENSION &> /dev/null
     then
-        echo "$EXTENSION is already installed. Skipping."
+        echo "$EXTENSION is already installed... skipping."
     else
-        echo "Installing $EXTENSION..."
+        echo "Installing $EXTENSION...\c"
         code --install-extension $EXTENSION &>/dev/null
-        echo "Done."
+        echo " done."
     fi
 done
 
 echo ""
 
 # VS Code Settings
-echo 'Copying VS Code settings...'
+echo 'Copying VS Code settings...\c'
 if [ ! -f $HOME/Library/Application\ Support/Code/User/settings.json ]
 then
     cp vscode_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-    echo "Done."
+    echo " done."
 else
-    echo 'Settings already copied. Skipping.'
+    echo ' skipping.'
 fi
 
 echo ""
 
 # Bash Aliases
-echo "Adding bash aliases and configuration..."
+echo "Adding bash aliases and configuration...\c"
 if less ~/.zshrc | grep 'alias gco="git checkout"' &> /dev/null
 then
-    echo "Aliases and configuration already added. Skipping."
+    echo " skipping."
 else
     less .zshrc >> ~/.zshrc
     sed -i '' 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/g' ~/.zshrc
-    echo "Done."
+    echo " done."
 fi
 
 echo ""
 
 # Git configuration
-echo "Configuring git..."
+echo "Configuring git...\c"
 git config --global pager.branch false
 git config --global user.name "Tom Nolan"
 git config --global user.email "tsnolan@outlook.com"
 git config --global pull.ff only
 git config --global commit.gpgsign true
-echo "Done."
+echo " done."
 
 echo ""
 
