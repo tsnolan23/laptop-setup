@@ -10,6 +10,8 @@ else
     echo "XCode is already installed. Skipping."
 fi
 
+echo ""
+
 # Check for Homebrew, install if we don't have it
 echo "Installing Homebrew..."
 if test ! $(which brew)
@@ -38,7 +40,7 @@ PACKAGES=(
 )
 for PACKAGE in "${PACKAGES[@]}"
 do
-    if brew list $PACKAGE > /dev/null
+    if brew list $PACKAGE &>/dev/null
     then
         echo "$PACKAGE is already installed. Skipping."
     else
