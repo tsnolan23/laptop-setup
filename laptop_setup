@@ -58,24 +58,19 @@ CASKS=(
     # Development
     visual-studio-code
     iterm2
-    robo-3t
     postman
-    figma
-
-    # Media
-    spotify
+    postico
+    # figma
+    # robo-3t
 
     # Productivity
     slack
-    dash
-    google-backup-and-sync
+
+    # Media
+    # spotify
 
     # Browsers
     google-chrome
-
-    # Gaming
-    league-of-legends
-    steam
 )
 for CASK in "${CASKS[@]}"
 do
