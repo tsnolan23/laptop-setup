@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 # Based on https://gist.github.com/codeinthehole/26b37efa67041e1307db
 
+# Check for XCode, install if it doesn't exist
+echo "Installing XCode..."
+if test ! $(xcode-select -p)
+then
+    xcode-select --install
+else
+    echo "XCode is already installed. Skipping."
+fi
+
 # Check for Homebrew, install if we don't have it
 echo "Installing Homebrew..."
 if test ! $(which brew)
