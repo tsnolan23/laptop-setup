@@ -189,7 +189,9 @@ echo " done."
 echo ""
 
 # MacOS configuration
-osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+echo "Setting dark mode...\c"
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+echo " done."
 
 echo ""
 
