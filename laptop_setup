@@ -65,6 +65,7 @@ CASKS=(
 
     # Productivity
     slack
+    obsidian
 
     # Media
     spotify
