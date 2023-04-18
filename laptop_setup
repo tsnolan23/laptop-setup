@@ -137,6 +137,7 @@ EXTENSIONS=(
     streetsidesoftware.code-spell-checker
     Janne252.fontawesome-autocomplete
     PKief.material-icon-theme
+    yoavbls.pretty-ts-errors
 )
 for EXTENSION in "${EXTENSIONS[@]}"
 do
