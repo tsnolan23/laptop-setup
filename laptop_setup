@@ -134,10 +134,8 @@ EXTENSIONS=(
     esbenp.prettier-vscode
     ms-vscode.vscode-typescript-next
     streetsidesoftware.code-spell-checker
-    Janne252.fontawesome-autocomplete
     PKief.material-icon-theme
     yoavbls.pretty-ts-errors
-    xyz.local-history
 )
 for EXTENSION in "${EXTENSIONS[@]}"
 do
