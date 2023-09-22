@@ -19,5 +19,7 @@
   // Other
   "workbench.settings.editor": "json",
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  // Temp solution to Tailwind directives throwing warnings
+  "css.lint.unknownAtRules": "ignore"
 }
