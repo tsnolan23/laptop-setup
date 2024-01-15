@@ -136,6 +136,7 @@ EXTENSIONS=(
     PKief.material-icon-theme
     yoavbls.pretty-ts-errors
     ms-python.python
+    kawamataryo.copy-python-dotted-path
 )
 for EXTENSION in "${EXTENSIONS[@]}"
 do
