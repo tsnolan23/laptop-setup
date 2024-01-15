@@ -135,6 +135,7 @@ EXTENSIONS=(
     streetsidesoftware.code-spell-checker
     PKief.material-icon-theme
     yoavbls.pretty-ts-errors
+    ms-python.python
 )
 for EXTENSION in "${EXTENSIONS[@]}"
 do
