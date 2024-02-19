@@ -18,6 +18,7 @@
   },
   // Other
   "workbench.settings.editor": "json",
+  "editor.stickyScroll.enabled": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   // Temp solution to Tailwind directives throwing warnings
